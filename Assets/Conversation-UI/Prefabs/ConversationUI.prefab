@@ -149,6 +149,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isMainFontSize: 0
   useMainFontSize: 1
+  whatShouldFitHere: 
   toSetTo: 12
   sizeHasBeenSet: 0
 --- !u!1 &1028852022856017075
@@ -469,6 +470,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isMainFontSize: 0
   useMainFontSize: 1
+  whatShouldFitHere: 
   toSetTo: 12
   sizeHasBeenSet: 0
 --- !u!1 &2184645940918564678
@@ -670,7 +672,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 8141408622160755333}
         m_TargetAssemblyTypeName: ConversationSystem, Assembly-CSharp
-        m_MethodName: sendText
+        m_MethodName: SendText
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -773,7 +775,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 19
+  m_fontSize: 12.65
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -829,6 +831,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isMainFontSize: 0
   useMainFontSize: 0
+  whatShouldFitHere: 
   toSetTo: 12
   sizeHasBeenSet: 0
 --- !u!1 &6906422462199402826
@@ -972,7 +975,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 8141408622160755333}
         m_TargetAssemblyTypeName: ConversationSystem, Assembly-CSharp
-        m_MethodName: sendText
+        m_MethodName: SendText
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1167,6 +1170,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isMainFontSize: 0
   useMainFontSize: 1
+  whatShouldFitHere: 
   toSetTo: 12
   sizeHasBeenSet: 0
 --- !u!1 &8150025897861959408
@@ -1397,7 +1401,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 15.55
+  m_fontSize: 11.85
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1453,6 +1457,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isMainFontSize: 1
   useMainFontSize: 1
+  whatShouldFitHere: 
   toSetTo: 12
   sizeHasBeenSet: 0
 --- !u!114 &8276308590202642345

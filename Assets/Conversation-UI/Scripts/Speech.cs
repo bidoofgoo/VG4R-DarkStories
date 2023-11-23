@@ -18,9 +18,11 @@ public class Speech
         this.text = text;
         this.metadata = metadata;
 
+        Debug.Log(this);
+
     }
 
     override public string ToString(){
-        return JsonUtility.ToJson(this);;
+        return speaker + ", "  + text + ", " + timestamp;
     }
 }

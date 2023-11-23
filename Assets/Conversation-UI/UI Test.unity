@@ -153,6 +153,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1411356046}
+  - {fileID: 569922027}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!224 &167727923 stripped
@@ -344,12 +345,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 569922025}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.09, y: -0.35, z: -0.66}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.2794534, y: -0.49917743, z: -120.313354}
   m_LocalScale: {x: 0.8499, y: 0.8499, z: 0.8499}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 62686321}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &660159841
 GameObject:
@@ -769,7 +770,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 167727924}
         m_TargetAssemblyTypeName: ConversationSystem, Assembly-CSharp
-        m_MethodName: receiveResponse
+        m_MethodName: ReceiveResponse
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -949,6 +950,28 @@ PrefabInstance:
       propertyPath: m_Name
       value: ConversationUI
       objectReference: {fileID: 0}
+    - target: {fileID: 1881744232361773843, guid: fc15f42e76c603d44b18a1d08e06bfd0, type: 3}
+      propertyPath: m_text
+      value: ???
+      objectReference: {fileID: 0}
+    - target: {fileID: 1881744232361773843, guid: fc15f42e76c603d44b18a1d08e06bfd0, type: 3}
+      propertyPath: m_fontSize
+      value: 20.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 4217289194641827893, guid: fc15f42e76c603d44b18a1d08e06bfd0, type: 3}
+      propertyPath: whatShouldFitHere
+      value: Giovanni Georgeo
+      objectReference: {fileID: 0}
+    - target: {fileID: 7987680416100126868, guid: fc15f42e76c603d44b18a1d08e06bfd0, type: 3}
+      propertyPath: whatShouldFitHere
+      value: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
+        eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+        sunt in culpa qui officia deserunt mollit anim id est laborum. sunt in culpa
+        qui officia deserunt mollit anim id est laborum. afdfasdf
+      objectReference: {fileID: 0}
     - target: {fileID: 8355521307108866361, guid: fc15f42e76c603d44b18a1d08e06bfd0, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1029,6 +1052,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8408825660353992145, guid: fc15f42e76c603d44b18a1d08e06bfd0, type: 3}
+      propertyPath: m_text
+      value: ...
+      objectReference: {fileID: 0}
+    - target: {fileID: 8408825660353992145, guid: fc15f42e76c603d44b18a1d08e06bfd0, type: 3}
+      propertyPath: m_fontSize
+      value: 72
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1042,4 +1073,3 @@ SceneRoots:
   - {fileID: 1672305146}
   - {fileID: 62686321}
   - {fileID: 400754352}
-  - {fileID: 569922027}

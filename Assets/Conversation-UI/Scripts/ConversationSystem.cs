@@ -22,13 +22,24 @@ public class ConversationSystem : MonoBehaviour
     public TMP_InputField inputField;
 
     public string currentSpeaker = "";
+
+    private int speakerTimer = 0;
     public string currentText = "";
 
     // Start is called before the first frame update
     void Start()
     {
         cs = this;
-        //setConversation("???", "...");
+        // setConversation("???", "...");
+    }
+
+    void FixedUpdate(){
+        if(speakerTimer > 0){
+            if(speakerTimer == 1){
+                this.FinishTalking();
+            }
+            speakerTimer--;
+        }
     }
 
     void emptyInputField(){
@@ -42,32 +53,34 @@ public class ConversationSystem : MonoBehaviour
 
     public static void setConversation(string speaker = null, string text = null){
         if(text != null)
-            cs.setText(text);
+            cs.SetText(text);
         if(speaker != null)
-            cs.setSpeaker(speaker);
+            cs.SetSpeaker(speaker);
     }
 
-    public void receiveResponse(string speaker, string text){
-        cs.setSpeaker(speaker);
-        currentText += text + "\n";
-        setText(currentText);
+    public void ReceiveResponse(string speaker, string text){
+        cs.SetSpeaker(speaker);
+        currentText += text + "";
+        SetText(currentText);
+        speakerTimer = 25;
     }
 
-    public void finishTalking(){
-
-        fullConvo.Append(new Speech(currentSpeaker, currentText));
+    public void FinishTalking(){
+        Speech aiSpeech = new Speech(currentSpeaker, currentText);
+        Debug.Log(aiSpeech);
+        fullConvo.Append(aiSpeech);
     }
 
-    private void setText(string text){
+    private void SetText(string text){
         cs.textField.text = text;
     }
 
-    private void setSpeaker(string speaker){
+    private void SetSpeaker(string speaker){
         cs.nameField.text = speaker;
         currentSpeaker = speaker;
     }
 
-    public void sendText(){
+    public void SendText(){
         if (string.IsNullOrEmpty(inputField.text))
             return;
         if (!InworldController.Instance.CurrentCharacter)
@@ -80,5 +93,4 @@ public class ConversationSystem : MonoBehaviour
         InworldController.Instance.CurrentCharacter.SendText(inputField.text);
         emptyInputField();
     }
-
 }

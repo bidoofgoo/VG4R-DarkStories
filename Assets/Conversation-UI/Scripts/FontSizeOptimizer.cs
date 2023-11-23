@@ -11,7 +11,7 @@ public class FontSizeOptimizer : MonoBehaviour
 
     public bool useMainFontSize = false;
 
-    private string whatShouldFitHere = "Lorem Ipsum";
+    public string whatShouldFitHere = "";
 
     public static float mainFontSize;
 
@@ -27,20 +27,21 @@ public class FontSizeOptimizer : MonoBehaviour
     void Start()
     {
         gui = GetComponent<TextMeshProUGUI>();
-        whatShouldFitHere = gui.text;
+        whatWasHere = gui.text;
+        if(whatShouldFitHere == "")whatShouldFitHere = gui.text;
 
-        
         PrepareFindBestPointSizeForThisResolution();
-
-        
     }
 
     // OnGui is called a few times per frame
     void Update()
     {
         if(!sizeHasBeenSet){
-            setSizes();
-            sizeHasBeenSet = true;
+            // Debug.Log(Time.frameCount);
+            if(Time.frameCount % 2 == 0){
+                setSizes();
+                sizeHasBeenSet = true;
+            }
         }
         
         if(useMainFontSize && mainSizeHasBeenSet){
@@ -52,14 +53,12 @@ public class FontSizeOptimizer : MonoBehaviour
 
     void PrepareFindBestPointSizeForThisResolution() {
 
-        whatWasHere = gui.text;
-        Debug.Log(whatWasHere);
         gui.enableAutoSizing = true;
         gui.text = whatShouldFitHere;
 
     }
     void setSizes(){
-        Debug.Log("setting sizes");
+        // Debug.Log("setting sizes");
         //gui.enableAutoSizing = true;
 
         if(isMainFontSize && !mainSizeHasBeenSet){
@@ -70,7 +69,7 @@ public class FontSizeOptimizer : MonoBehaviour
 
         toSetTo = gui.fontSize;
 
-    	Debug.Log(whatWasHere);
+    	// Debug.Log(whatWasHere);
         gui.text = whatWasHere;
         gui.enableAutoSizing = false;
     }
