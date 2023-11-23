@@ -49,7 +49,7 @@ public class ConversationSystem : MonoBehaviour
 
     public void receiveResponse(string speaker, string text){
         cs.setSpeaker(speaker);
-        currentText += text;
+        currentText += text + "\n";
         setText(currentText);
     }
 
