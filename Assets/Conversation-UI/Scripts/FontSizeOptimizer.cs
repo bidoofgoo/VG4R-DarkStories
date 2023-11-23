@@ -13,39 +13,66 @@ public class FontSizeOptimizer : MonoBehaviour
 
     private string whatShouldFitHere = "Lorem Ipsum";
 
-    public static float mainFontSize = 12;
-    public static bool mainSizeHasBeenSet = false;
+    public static float mainFontSize;
 
-    private TextMeshProUGUI textMeshPro;
+    public float toSetTo;
+    public static bool mainSizeHasBeenSet = false;
+    public bool sizeHasBeenSet = false;
+
+    private string whatWasHere;
+
+    private TextMeshProUGUI gui;
 
     // Start is called before the first frame update
     void Start()
     {
-        textMeshPro = GetComponent<TextMeshProUGUI>();
-        whatShouldFitHere = textMeshPro.text;
-        textMeshPro.enableAutoSizing = false;
+        gui = GetComponent<TextMeshProUGUI>();
+        whatShouldFitHere = gui.text;
+
+        
+        PrepareFindBestPointSizeForThisResolution();
+
+        
     }
 
     // OnGui is called a few times per frame
-    void OnGUI()
+    void Update()
     {
-        if(isMainFontSize){
-            FontSizeOptimizer.mainFontSize = FindBestPointSizeForThisResolution();
-            Debug.Log(FontSizeOptimizer.mainFontSize);
+        if(!sizeHasBeenSet){
+            setSizes();
+            sizeHasBeenSet = true;
         }
         
-        if(useMainFontSize){
-            textMeshPro.fontSize = FontSizeOptimizer.mainFontSize;
+        if(useMainFontSize && mainSizeHasBeenSet){
+            gui.fontSize = mainFontSize;
         }else{
-            textMeshPro.fontSize = FindBestPointSizeForThisResolution();
+            gui.fontSize = toSetTo;
         }
     }
 
-    float FindBestPointSizeForThisResolution() {
-        textMeshPro.enableAutoSizing = true;
-        textMeshPro.text = whatShouldFitHere;
-        float fontSize = textMeshPro.fontSize;
-        textMeshPro.enableAutoSizing = false;
-        return fontSize;
+    void PrepareFindBestPointSizeForThisResolution() {
+
+        whatWasHere = gui.text;
+        Debug.Log(whatWasHere);
+        gui.enableAutoSizing = true;
+        gui.text = whatShouldFitHere;
+
     }
+    void setSizes(){
+        Debug.Log("setting sizes");
+        //gui.enableAutoSizing = true;
+
+        if(isMainFontSize && !mainSizeHasBeenSet){
+            mainFontSize = gui.fontSize;
+            //Debug.Log(FontSizeOptimizer.mainFontSize);
+            mainSizeHasBeenSet = true;
+        }
+
+        toSetTo = gui.fontSize;
+
+    	Debug.Log(whatWasHere);
+        gui.text = whatWasHere;
+        gui.enableAutoSizing = false;
+    }
+
 }
