@@ -12,6 +12,8 @@ using UnityEngine.UI;
 public class ConversationSystem : MonoBehaviour
 {
 
+    public static int convoSession;
+
     public static ConversationSystem cs;
 
     public static Speech[] fullConvo = {};
@@ -30,6 +32,7 @@ public class ConversationSystem : MonoBehaviour
     void Start()
     {
         cs = this;
+        ConversationSystem.convoSession = UnityEngine.Random.Range(0, 100000000);
         // setConversation("???", "...");
     }
 
@@ -67,7 +70,7 @@ public class ConversationSystem : MonoBehaviour
 
     public void FinishTalking(){
         Speech aiSpeech = new Speech(currentSpeaker, currentText);
-        Debug.Log(aiSpeech);
+        // Debug.Log(aiSpeech);
         fullConvo.Append(aiSpeech);
     }
 
@@ -88,7 +91,7 @@ public class ConversationSystem : MonoBehaviour
             InworldAI.LogError("No Character is interacting.");
             return;
         }
-        fullConvo.Append(new Speech("player", inputField.text));
+        fullConvo.Append(new Speech("Player", inputField.text));
         emptyTextField();
         InworldController.Instance.CurrentCharacter.SendText(inputField.text);
         emptyInputField();
