@@ -11,7 +11,7 @@ public class Speech
     string text;
     string metadata;
     string timestamp;
-    
+
     public Speech(string speaker, string text, string metadata = ""){
         this.timestamp = DateTime.UtcNow.ToString();
         this.speaker = speaker;
@@ -23,6 +23,6 @@ public class Speech
     }
 
     override public string ToString(){
-        return speaker + ", "  + text + ", " + timestamp;
+        return speaker + "; "  + text + "; " + timestamp;
     }
 }
