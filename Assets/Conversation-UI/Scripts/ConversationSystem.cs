@@ -65,7 +65,7 @@ public class ConversationSystem : MonoBehaviour
         cs.SetSpeaker(speaker);
         currentText += text + "";
         SetText(currentText);
-        speakerTimer = 75;
+        speakerTimer = 100;
     }
 
     public void FinishTalking(){
