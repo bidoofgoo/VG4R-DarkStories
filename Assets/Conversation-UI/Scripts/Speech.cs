@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using GoogleSheetsToUnity;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.Networking;
 
 [Serializable]
 public class Speech
@@ -50,6 +51,6 @@ public class Speech
     }
 
     public void Callback(){
-        Debug.Log(this);
+        Debug.Log("Sent to db: " + this);
     }
 }

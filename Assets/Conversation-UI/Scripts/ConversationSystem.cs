@@ -28,12 +28,16 @@ public class ConversationSystem : MonoBehaviour
     private int speakerTimer = 0;
     public string currentText = "";
 
+    private bool hasStarted = false;
+
     // Start is called before the first frame update
     void Start()
     {
         cs = this;
         ConversationSystem.convoSession = UnityEngine.Random.Range(0, 100000000);
+        InworldController.Instance.Init();
         // setConversation("???", "...");
+
     }
 
     void FixedUpdate(){
@@ -42,6 +46,10 @@ public class ConversationSystem : MonoBehaviour
                 this.FinishTalking();
             }
             speakerTimer--;
+        }
+        if(InworldController.State == ControllerStates.Connected && !hasStarted){
+            InworldController.Instance.CurrentCharacter.SendText("Hello. I am " + Game.playerName + ". Please introduce yourself and give me an explaination of what's going on.");
+            hasStarted = true;
         }
     }
 
@@ -69,7 +77,7 @@ public class ConversationSystem : MonoBehaviour
     }
 
     public void FinishTalking(){
-        Speech aiSpeech = new Speech(currentSpeaker, currentText);
+        Speech aiSpeech = new Speech(currentSpeaker, currentText, Game.conversationState);
         // Debug.Log(aiSpeech);
         fullConvo.Append(aiSpeech);
     }
@@ -91,7 +99,7 @@ public class ConversationSystem : MonoBehaviour
             InworldAI.LogError("No Character is interacting.");
             return;
         }
-        fullConvo.Append(new Speech("Player", inputField.text));
+        fullConvo.Append(new Speech("Player", inputField.text, Game.conversationState));
         emptyTextField();
         InworldController.Instance.CurrentCharacter.SendText(inputField.text);
         emptyInputField();
