@@ -748,7 +748,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Giovanni Georgeo
+  m_text: ???
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e7b8ee8bd591e004fa98e331ae37db0f, type: 2}
   m_sharedMaterial: {fileID: 3033241782245158931, guid: e7b8ee8bd591e004fa98e331ae37db0f, type: 2}
@@ -775,7 +775,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 12.65
+  m_fontSize: 20.3
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -831,7 +831,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isMainFontSize: 0
   useMainFontSize: 0
-  whatShouldFitHere: 
+  whatShouldFitHere: Giovanni Georgeo
   toSetTo: 12
   sizeHasBeenSet: 0
 --- !u!1 &6906422462199402826
@@ -1368,13 +1368,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
-    eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt
-    in culpa qui officia deserunt mollit anim id est laborum. sunt in culpa qui officia
-    deserunt mollit anim id est laborum. afdfasdf
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e7b8ee8bd591e004fa98e331ae37db0f, type: 2}
   m_sharedMaterial: {fileID: 3033241782245158931, guid: e7b8ee8bd591e004fa98e331ae37db0f, type: 2}
@@ -1401,7 +1395,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 11.85
+  m_fontSize: 24
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1457,7 +1451,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isMainFontSize: 1
   useMainFontSize: 1
-  whatShouldFitHere: 
+  whatShouldFitHere: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+    do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+    veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+    dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+    sunt in culpa qui officia deserunt mollit anim id est laborum. sunt in culpa
+    qui officia deserunt mollit anim id est laborum. afdfasdf
   toSetTo: 12
   sizeHasBeenSet: 0
 --- !u!114 &8276308590202642345
